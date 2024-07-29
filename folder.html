@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pengantaran</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="data.html">Data</a></li>
+            </ul>
+        </nav>
+        <div id="dateTimeDisplay"></div>
+    </header>
+    <div class="container">
+        <h2>Data Pengantaran: <span id="folderName"></span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jumlah Tabung</th>
+                    <th>Waktu</th>
+                    <th>Tanggal</th>
+                </tr>
+            </thead>
+            <tbody id="folderData"></tbody>
+        </table>
+        <button onclick="window.location.href='data.html'">Kembali</button>
+    </div>
+    <script src="javascript/folder-scripts.js"></script>
+</body>
+</html>

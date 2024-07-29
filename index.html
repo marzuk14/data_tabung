@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengantaran Tabung</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="data.html">Data</a></li>
+            </ul>
+        </nav>
+        <div id="dateTimeDisplay"></div>
+    </header>
+    <div class="container">
+        <h2>Form Pengantaran Tabung</h2>
+        <label for="name">Nama Pengantar:</label>
+        <input type="text" id="name">
+        <label for="quantity">Jumlah Tabung:</label>
+        <input type="number" id="quantity">
+        <button id="addButton">Tambah Data</button>
+        <button id="saveButton">Simpan</button>
+        <button id="clearButton">Clear</button>
+        <h2>Data Pengantaran</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Pengantar</th>
+                    <th>Jumlah Tabung</th>
+                    <th>Waktu</th>
+                    <th>Tanggal</th>
+                </tr>
+            </thead>
+            <tbody id="deliveryData"></tbody>
+        </table>
+    </div>
+    <script src="javascript/scripts.js"></script>
+</body>
+</html>
