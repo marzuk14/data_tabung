@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updateDateTime() {
     const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    const formattedDate = now.toLocaleDateString('id-ID', options);
     const dateTimeDisplay = document.getElementById('dateTimeDisplay');
-    dateTimeDisplay.textContent = now.toLocaleString();
+    dateTimeDisplay.textContent = `Tanggal & Waktu: ${formattedDate}`;
 }
 
 function addData() {
@@ -17,6 +19,7 @@ function addData() {
     const now = new Date();
     const time = now.toLocaleTimeString();
     const date = now.toLocaleDateString();
+    const dayOfWeek = now.toLocaleDateString('id-ID', { weekday: 'long' });
 
     if (name === '' || quantity === '') {
         alert('Nama dan jumlah tabung harus diisi.');
@@ -31,6 +34,7 @@ function addData() {
         <td>${quantity}</td>
         <td>${time}</td>
         <td>${date}</td>
+        <td>${dayOfWeek}</td>
     `;
 
     // Clear the input fields
@@ -58,7 +62,8 @@ function saveData() {
             name: cells[0].textContent,
             quantity: cells[1].textContent,
             time: cells[2].textContent,
-            date: cells[3].textContent
+            date: cells[3].textContent,
+            day: cells[4].textContent
         });
     });
 
