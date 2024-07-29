@@ -1,32 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    updateDateTime();
-    loadFolderData();
+    const urlParams = new URLSearchParams(window.location.search);
+    const folderName = urlParams.get('folder');
+    
+    if (!folderName) {
+        alert('Nama folder tidak ditemukan.');
+        window.location.href = 'data.html';
+        return;
+    }
+    
+    document.getElementById('folderName').textContent = folderName;
+    
+    const folderData = JSON.parse(localStorage.getItem(folderName)) || [];
+    const folderDataTable = document.getElementById('folderData');
+
+    folderData.forEach(item => {
+        const row = folderDataTable.insertRow();
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.time}</td>
+            <td>${item.date}</td>
+            <td>${item.day}</td>
+        `;
+    });
 });
 
-function updateDateTime() {
-    const now = new Date();
-    const dateTimeDisplay = document.getElementById('dateTimeDisplay');
-    dateTimeDisplay.textContent = now.toLocaleString();
-}
-
-function loadFolderData() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const folder = urlParams.get('folder');
-    document.getElementById('folderName').textContent = folder;
-
-    const folderData = JSON.parse(localStorage.getItem(folder));
-    const folderTable = document.getElementById('folderData');
-
-    folderData.forEach(entry => {
-        const row = document.createElement('tr');
-
-        row.innerHTML = `
-            <td>${entry.name}</td>
-            <td>${entry.quantity}</td>
-            <td>${entry.time}</td>
-            <td>${entry.date}</td>
-        `;
-
-        folderTable.appendChild(row);
-    });
-}
