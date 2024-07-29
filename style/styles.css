@@ -138,3 +138,59 @@ tr.checked-row {
     text-decoration: line-through;
     color: #999;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    /* Tabel Responsif */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 8px 15px;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    /* Tabel Responsif Lebih Lanjut */
+    th, td {
+        padding: 8px;
+    }
+}
