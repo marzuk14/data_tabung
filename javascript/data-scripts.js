@@ -18,7 +18,8 @@ function displayFolders() {
         const deleteIcon = document.createElement('span');
         deleteIcon.className = 'delete-icon';
         deleteIcon.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        deleteIcon.addEventListener('click', function() {
+        deleteIcon.addEventListener('click', function(event) {
+            event.stopPropagation();
             deleteFolder(key);
         });
 
