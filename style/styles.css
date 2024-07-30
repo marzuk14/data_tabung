@@ -13,21 +13,88 @@ header {
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav ul li {
-    display: inline;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul.nav-left {
+    justify-content: flex-start;
+	margin-left: 10%;
+}
+
+ul.nav-right {
+    justify-content: flex-end;
+	margin-right:10%;
+}
+
+li {
     margin: 0 10px;
 }
 
-header nav ul li a {
-    color: #fff;
+a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown CSS */
+/* ... existing styles ... */
+
+.nav-right {
+    position: relative; /* Ensure relative positioning for dropdown */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right of the button */
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Fade in effect */
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1; /* Show when active */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropbtn {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+
 
 #dateTimeDisplay {
     font-size: 1.2em;
@@ -138,6 +205,65 @@ tr.checked-row {
     text-decoration: line-through;
     color: #999;
 }
+
+
+/* CSS untuk ikon delete */
+.delete-icon {
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+    color: darkred;
+}
+
+
+.edit-icon, .delete-icon {
+    cursor: pointer;
+    margin: 0 5px;
+    color: #007bff;
+}
+
+.edit-icon:hover, .delete-icon:hover {
+    color: #0056b3;
+}
+
+
+/* style/styles.css */
+
+#addDataButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#addDataButton:hover {
+    background-color: #0056b3;
+}
+
+/* Tambahkan CSS untuk form */
+        #addDataForm {
+            display: none; /* Sembunyikan form secara default */
+            margin-bottom: 20px;
+        }
+
+        #addDataForm input,
+        #addDataForm button {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #addDataForm input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
