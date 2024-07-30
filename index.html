@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengantaran Tabung</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="nav-left">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="data.html">Data</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="dropdown" id="profileDropdown">
+                    <a href="#" class="dropbtn" id="profileButton">My Profile</a>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="account.html">Akun</a>
+                        <a href="about.html">Tentang</a>
+                        <a href="login.html">Keluar</a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <div id="dateTimeDisplay"></div>
@@ -34,11 +45,15 @@
                     <th>Waktu</th>
                     <th>Tanggal</th>
                     <th>Hari</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody id="deliveryData"></tbody>
         </table>
     </div>
+
+
     <script src="javascript/scripts.js"></script>
+    <script src="javascript/profile-scripts.js"></script>
 </body>
 </html>
