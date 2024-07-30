@@ -10,7 +10,7 @@ function updateDateTime() {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     const formattedDate = now.toLocaleDateString('id-ID', options);
     const dateTimeDisplay = document.getElementById('dateTimeDisplay');
-    dateTimeDisplay.textContent = `Tanggal & Waktu: ${formattedDate}`;
+    dateTimeDisplay.textContent = `${formattedDate}`;
 }
 
 function addData() {
@@ -35,7 +35,13 @@ function addData() {
         <td>${time}</td>
         <td>${date}</td>
         <td>${dayOfWeek}</td>
+        <td><i class="fas fa-trash delete-icon"></i></td>
     `;
+
+    // Add event listener to the delete icon
+    newRow.querySelector('.delete-icon').addEventListener('click', function() {
+        deliveryData.deleteRow(newRow.rowIndex - 1);
+    });
 
     // Clear the input fields
     document.getElementById('name').value = '';
@@ -51,9 +57,10 @@ function saveData() {
     }
 
     const now = new Date();
+	const day = now.toLocaleDateString('id-ID', { weekday: 'long' });
     const dateString = now.toISOString().split('T')[0]; // YYYY-MM-DD
     const timestamp = now.getTime(); // Unique timestamp
-    const folderName = `${dateString}_${timestamp}`;
+    const folderName = `${day} ${dateString}_${timestamp}`;
     const folderData = [];
 
     rows.forEach(row => {
@@ -78,3 +85,5 @@ function clearTable() {
     const deliveryData = document.getElementById('deliveryData');
     deliveryData.innerHTML = '';
 }
+
+
