@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Pengantaran</title>
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="nav-left">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="data.html">Data</a></li>
             </ul>
@@ -18,6 +20,20 @@
     </header>
     <div class="container">
         <h2>Data Pengantaran: <span id="folderName"></span></h2>
+
+        <!-- Tombol untuk menambah data -->
+        <button id="addDataButton">Tambah Data</button>
+
+        <!-- Form untuk menambah data -->
+        <div id="addDataForm">
+            <h3>Form Tambah Data</h3>
+            <input type="text" id="nameInput" placeholder="Nama">
+            <input type="number" id="quantityInput" placeholder="Jumlah Tabung">
+            <button id="submitDataButton">Simpan Data</button>
+            <button id="cancelButton">Batal</button>
+        </div>
+
+        <!-- Tabel untuk menampilkan data -->
         <table>
             <thead>
                 <tr>
@@ -26,6 +42,7 @@
                     <th>Waktu</th>
                     <th>Tanggal</th>
                     <th>Hari</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody id="folderData"></tbody>
